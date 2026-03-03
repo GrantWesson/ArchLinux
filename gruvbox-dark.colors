@@ -1,0 +1,19 @@
+[General]
+Name=gruvbox-dark
+Description=Gruvbox Dark Plasma Theme
+Wallpaper=
+ColorScheme=gruvbox-dark
+
+[Colors:Window]
+BackgroundNormal=0x282828
+ForegroundNormal=0xebdbb2
+BackgroundAlternate=0x3c3836
+ForegroundAlternate=0xebdbb2
+ButtonBackground=0x3c3836
+ButtonForeground=0xebdbb2
+Highlight=0x458588
+HighlightedText=0xebdbb2
+LinkColor=0x83a598
+VisitedLinkColor=0xd3869b
+TooltipBackground=0x3c3836
+TooltipForeground=0xebdbb2
