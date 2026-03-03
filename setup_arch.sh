@@ -9,7 +9,22 @@
 
 set -e
 
-DISK="/dev/nvme0n1"
+# Safety check: list all drives
+echo ">>> WARNING: This script will erase a drive completely!"
+echo ">>> Detected drives:"
+lsblk -d -o NAME,SIZE,MODEL,TYPE
+
+read -p ">>> Type the drive you want to wipe (e.g., nvme0n1 or sda): " CONFIRM_DISK
+
+if [ "$CONFIRM_DISK" != "nvme0n1" ]; then
+    read -p ">>> You typed '$CONFIRM_DISK'. Are you SURE you want to continue? (yes/no): " SURE
+    if [ "$SURE" != "yes" ]; then
+        echo "Aborting script."
+        exit 1
+    fi
+fi
+
+DISK="/dev/$CONFIRM_DISK"
 HOSTNAME="archbox"
 USER="grant"
 EFI_PART="${DISK}p1"
